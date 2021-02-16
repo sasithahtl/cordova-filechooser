@@ -2,6 +2,7 @@ package com.megster.cordova;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.ClipData;
 import android.net.Uri;
 import android.util.Log;
 
@@ -60,7 +61,7 @@ public class FileChooser extends CordovaPlugin {
 
             if (resultCode == Activity.RESULT_OK) {
 
-                Uri uri = data.getClipData();
+                Uri uri = data.getData();
 
                 if (uri != null) {
 
@@ -68,8 +69,9 @@ public class FileChooser extends CordovaPlugin {
                     callback.success(uri.toString());
 
                 } else {
-
-                    callback.error("File uri was null");
+                    ClipData clipdata = data.getClipData();
+                    Log.w(TAG, clipdata.getItemCount());
+                    callback.success("File uri was null " + clipdata.getItemCount());
 
                 }
 
