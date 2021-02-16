@@ -60,7 +60,7 @@ public class FileChooser extends CordovaPlugin {
 
             if (resultCode == Activity.RESULT_OK) {
 
-                Uri uri = data.getData();
+                Uri uri = data.getExtras();
 
                 if (uri != null) {
 
