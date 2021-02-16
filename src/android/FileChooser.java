@@ -71,7 +71,7 @@ public class FileChooser extends CordovaPlugin {
                 } else {
                     ClipData clipdata = data.getClipData();
                     Log.w(TAG, clipdata.getItemCount());
-                    callback.success("File uri was null " + clipdata.getItemCount());
+                    callback.success("clipdata count " + clipdata.getItemCount());
 
                 }
 
