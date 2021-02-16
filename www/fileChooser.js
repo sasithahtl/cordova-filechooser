@@ -1,6 +1,6 @@
 module.exports = {
     open: function (filter, success, failure) {
-        console.log('opened filechooser 2');
+        console.log('opened filechooser 3');
         if (typeof filter === 'function') {
             failure = success;
             success = filter;
